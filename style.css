@@ -1,0 +1,561 @@
+@font-face {
+    font-family: "Ubuntu-Regular";
+    src: url("./assets/fonts/Ubuntu-Regular.ttf");
+}
+@font-face {
+    font-family: "Ubuntu-Medium";
+    src: url("./assets/fonts/Ubuntu-Medium.ttf");
+}
+@font-face {
+    font-family: "Ubuntu-Bold";
+    src: url("./assets/fonts/Ubuntu-Bold.ttf");
+}
+
+
+:root {
+/* primary */
+--Marine-blue: hsl(213, 96%, 18%);
+--Purplish-blue: hsl(243, 74%, 45%);
+--Purplish-blue-light: hsl(243, 100%, 62%);
+--Pastel-blue: hsl(228, 100%, 84%);
+--Light-blue: hsl(206, 94%, 87%);
+--Strawberry-red: hsl(354, 84%, 57%);
+/* secondary */
+--Cool-gray: hsl(231, 11%, 63%);
+--Light-gray: hsl(229, 24%, 87%);
+--Magnolia: hsl(217, 100%, 97%);
+--Alabaster: hsl(231, 100%, 99%);
+--White: hsl(0, 0%, 100%);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: "Ubuntu-Regular", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--Magnolia);
+}
+
+.wrapper {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 0px 18px -10px rgba(0,0,0,0.3);
+    margin-top: 5rem;
+    padding: 1rem;
+    color: var(--Marine-blue);
+}
+
+.wrapper p {
+    font-size: .8rem;
+    margin: 0 0 1rem;
+    color: var(--Cool-gray);
+}
+
+.input-form {
+    height: 25rem;
+    width: 27rem;
+    padding: 1rem 0 1rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+}
+
+.input-form > * {
+    transition: opacity 1.5s ease-in-out;
+}
+
+.title-display h1 {
+    margin: 0;
+}
+
+.title-display {
+    position: absolute;
+    top: 0;
+}
+
+.input-form form, .plan-select, .addons-select, .finishing-up {
+    position: absolute;
+    top: 5.5rem;
+    width: 80%;
+}
+
+
+
+/* step 1 ================================ */
+
+.input-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.input-form form label {
+    position: relative;
+    text-align: start;
+    font-size: .8rem;
+    font-weight: bold;
+}
+
+.input-form form input {
+    font-family: "Ubuntu-Medium";
+    width: 102%;
+    margin: 5px 0 1.2rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1.5px solid var(--Light-gray);
+    color: var(--Marine-blue);
+}
+
+.input-form form input:focus {
+    border: 1.5px solid var(--Purplish-blue);
+}
+
+p.alert {
+    font-size: .7rem;
+    color: var(--Strawberry-red);
+    position: absolute;
+    right: 1.2rem;
+    top: 3px;
+}
+
+
+.hidden, .hidden > * {
+    opacity: 0;
+    cursor:default;
+    pointer-events: none;
+}
+
+.hidden-display, .hidden-display > *{
+    opacity: 0;
+    cursor:default;
+    pointer-events: none;
+    display: none;
+}
+
+.unhidden > * {
+    opacity: 1;
+    cursor: auto;
+    pointer-events: auto;
+}
+
+/* step 2 ========================================*/
+
+div.plan-select {
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
+    width: 22rem;
+    height: 15rem;
+    border-radius: 10px;
+}
+
+
+.plan {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+}
+
+.plan-option {
+    position: relative;
+}
+
+.plan-option > input {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    border: 1.5px solid var(--Cool-gray);
+    transition: all 0.1s ease-in-out;
+    font-weight: bold;
+    color: var(--Marine-blue);
+    cursor: pointer;
+    text-align: start;
+    padding-left: 1rem;
+    padding-top: 4rem;
+}
+
+.plan-option > span {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: .8rem;
+    color: var(--Cool-gray);
+}
+
+.plan-option > input[name="arcade"] {
+    background: no-repeat url("./assets/images/icon-arcade.svg");
+    background-position: 25% 15% ;
+}
+
+.plan-option > input[name="advanced"] {
+    background: no-repeat url("./assets/images/icon-advanced.svg");
+    background-position: 25% 15% ;
+}
+.plan-option > input[name="pro"] {
+    background: no-repeat url("./assets/images/icon-pro.svg");
+    background-position: 25% 15% ;
+}
+
+.plan-option > input:hover, .plan-option > input.selected{
+    background-color: var(--Magnolia);
+    border: 1.5px solid var(--Purplish-blue-light);
+}
+
+div.plan-type {
+    display: flex;
+}
+
+.plan-switch {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Magnolia);
+    border-radius: 8px;
+    padding: 7px 0 7px;
+    font-weight: bold;
+    font-size: .8rem;
+}
+
+.switch input {
+    position: absolute;
+    visibility: hidden;
+}
+  
+.switch {
+  margin: auto 5px;
+  height: 1.4rem;
+  width: 2.7rem;
+  background: var(--Marine-blue);
+  border-radius: 1em;
+  position: relative;
+  cursor: pointer;
+}
+
+.switch span:after {
+  content: "";
+  position: absolute;
+  height: 1.35rem;
+  width: 1.35rem;
+  left: 0;
+  top: 0;
+  border-radius: 1rem;
+  background: white;
+  box-shadow: 0 0.1em 0.3em rgba(0,0,0,0.5);
+  transition: all .3s;
+}
+
+.switch > input:checked + span::after{
+    transform: translateX(100%);
+}
+
+.yearly, .monthly.switched {
+    color: grey;
+}
+.yearly.switched {
+    color: var(--Marine-blue);
+}
+
+/* step 3 ================================================*/
+
+.addons-select {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;
+    width: 21rem;
+    height: 14rem;
+    border-radius: 10px;
+}
+
+.addons-option {
+    background: var(--Magnolia);
+    border: 1.3px solid var(--Purplish-blue);
+    border-radius: 10px;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+}
+
+.addons-option:hover {
+    background: var(--White);
+    border: 1.5px solid var(--Purplish-blue);
+}
+
+.addons-option label {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: var(--Purplish-blue);
+    font-size: .9rem;
+    padding-right: 1.5rem;
+}
+
+.addons-option input {
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.addons-option input:checked{
+    filter: saturate(1) hue-rotate(25deg) brightness(1);
+}
+
+.addons-option label::before, .addons-option label::after {
+    position: absolute;
+    content: '';
+    left: 3.5rem;
+}
+
+.addons-option span {
+    position: absolute;
+    right: 1rem;
+    top: 1.5rem;
+}
+
+.addons-option label::before {
+    color: var(--Marine-blue);
+    font-weight: bold;
+    top: 1.1rem;
+}
+
+.addons-option label::after {
+    color: var(--Cool-gray);
+    bottom: 1.1rem;
+    font-size: .8rem;
+}
+
+.addons-option label[for="online-service"]::before {
+    content: "Online service";
+}
+.addons-option label[for="online-service"]::after {
+    content: "Access to multiplayer games";
+}
+
+.addons-option label[for="larger-storage"]::before {
+    content: "Larger storage";
+}
+.addons-option label[for="larger-storage"]::after {
+    content: "Extra 1TB of cloud save";
+}
+
+.addons-option label[for="customizable-profile"]::before {
+    content: "Customizable Profile";
+}
+.addons-option label[for="customizable-profile"]::after {
+    content: "Custom theme on your profile";
+}
+
+/* step 4 ======================================================== */
+
+div.finishing-up {
+    display: grid;
+    width: 22rem;
+    border-radius: 10px;
+    display: grid;
+    color: var(--Cool-gray);
+}
+
+.selection-summary {
+    background: var(--Magnolia);
+    border-radius: 10px;
+    display: grid;
+}
+
+.selection-summary > * {
+    margin: 0 1rem;
+}
+
+.plan-sum {
+    border-bottom: 2px solid var(--Light-gray);
+    height: 4.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.plan-sum h5 {
+    padding-left: .4rem;
+}
+
+.plan-sum h5, .plan-sum p {
+    color: var(--Marine-blue);
+    margin-bottom: 0;
+}
+
+.plan-sum p {
+    font-weight: bold;
+    padding-top: 1.5rem;
+}
+
+.plan-change-btn {
+    color: var(--Marine-blue);
+    border: none;
+    background: none;
+    text-decoration: underline;
+    font-size: .9rem;
+    cursor: pointer;
+}
+
+.plan-change-btn:hover {
+    color: var(--Purplish-blue);
+}
+
+.plan-change-btn:active {
+    color: var(--Purplish-blue-light);
+}
+
+.sum-addons-option {
+    font-size: .8rem;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum-addons-option > span:nth-child(2) {
+    color: var(--Marine-blue);
+}
+
+.addons-sum, .total-price {
+    color: var(--Cool-gray);
+}
+
+.total-price {
+    margin: auto 1rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-price > p:nth-child(2) {
+    color: var(--Marine-blue);
+}
+
+/* Steps div ======================================================= */
+.steps-sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    width: 12rem;
+    background: no-repeat url("./assets/images/bg-sidebar-desktop.svg");
+    background-size: contain;
+}
+
+.steps-btn {
+    margin: 2px 15px 0 0;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.steps-btn:hover {
+    font-size: 1.1rem;
+    background-color: var(--Pastel-blue);
+    color: var(--Marine-blue);
+}
+
+.steps-btn.active{
+    background-color: var(--Pastel-blue);
+    color: var(--Marine-blue);
+}
+
+.steps-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.steps-sidebar ul li {
+    display: flex;
+    margin: 15px;
+}
+
+.steps-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.steps-details p {
+    margin: 0
+}
+
+.steps-sidebar a {
+    font-size: .9rem;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Navigation buttons ==================*/
+
+.continue-btn, .return-btn {
+    position: absolute;
+}
+
+.return-btn {
+    align-self: flex-start;
+    border: none;
+    color: var(--Cool-gray);
+    background: none;
+    cursor: pointer;
+    font-weight: bold;
+    bottom: 1.5rem;
+}
+
+.return-btn:hover {
+    color: var(--Purplish-blue);
+    text-decoration: underline;
+}
+
+.return-btn:active {
+    color: var(--Purplish-blue-light);
+}
+
+
+.continue-btn {
+    align-self: flex-end;
+    border: 1px solid var(--Cool-gray);
+    border-radius: 5px;
+    width: 5rem;
+    height: 2rem;
+    background-color: var(--Marine-blue);
+    color: white;
+    cursor: pointer;
+    right: 1rem;
+    bottom: 1rem;
+}
+
+.continue-btn:hover {
+    background-color: var(--Purplish-blue);
+}
+
+.continue-btn:active {
+    background-color: var(--Purplish-blue-light);
+}
+
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

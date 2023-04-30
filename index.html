@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Multi-step form</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <main>
+    <div class="wrapper first">
+      <div class="steps-sidebar">
+        <ul>
+          <li>
+            <button class="steps-btn first active" id="1">1</button>
+            <div class="steps-details">
+              <p>Step 1</p>
+              <a href="#">YOUR INFO</a>
+            </div>
+          </li>
+  
+          <li>
+            <button class="steps-btn second" id="2">2</button>
+            <div class="steps-details">
+              <p>Step 2</p>
+              <a href="#">SELECT PLAN</a>
+            </div>
+          </li>
+
+          <li>
+            <button class="steps-btn third" id="3">3</button>
+            <div class="steps-details">
+              <p>Step 3</p>
+              <a href="#">ADD-ONS</a>
+            </div>
+          </li>
+  
+          <li>
+            <button class="steps-btn fourth" id="4">4</button>
+            <div class="steps-details">
+              <p>Step 4</p>
+              <a href="#">SUMMARY</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="input-form">
+        <div class="title-display">
+          <h1 class="title">Personal info</h1>
+          <p class="title-description">Please provide your name, email address, and phone number.</p>
+        </div>
+        
+        <form action="" class="" id="step-1">
+          <label for="name">
+            Name
+          </label> <input class="personal-input" id="name" type="text" name="name" required placeholder="e.g. Stephen King">
+
+          <label for="email">
+            Email Address
+          </label>
+          <input class="personal-input" id="email" type="text" name="email" required placeholder="e.g. stephenking@lorem.com">
+
+          <label for="phone">
+            Phone Number
+          </label>
+          <input class="personal-input" id="phone" type="text" name="phone" required placeholder="e.g. +1 234 567 890">
+        </form>
+
+        <div class="plan-select hidden" id="step-2">
+
+          <div class="plan">
+            <div class="plan-option">
+              <input type="button" name="arcade" value="Arcade" class="selected" data-price="9">
+              <span id="arcade">$9/mo</span>
+            </div>
+
+            <div class="plan-option">
+              <input type="button" name="advanced" value="Advanced" data-price="12">
+              <span id="advanced">$12/mo</span>
+            </div>
+
+            <div class="plan-option">
+              <input type="button" name="pro" value="Pro" data-price="15">
+              <span id="pro">$15/mo</span>
+            </div>
+          </div>
+
+          <div>
+            <div class="plan-switch">
+              <span class="monthly">Monthly</span>
+              <label class="switch" for="monthly-yearly">
+                <input type="checkbox" id="monthly-yearly">
+                <span></span>
+              </label>
+              <span class="yearly">Yearly</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="addons-select hidden" id="step-3">
+
+          <div class="addons-option">
+            <label for="online-service">
+              <input type="checkbox" class="addons-btn" id="online-service" value="onlineService" data-price="1">
+            </label>
+            <span id="online-service-price">+1$/mo</span>
+          </div>
+
+          <div class="addons-option">
+            <label for="larger-storage">
+              <input type="checkbox" class="addons-btn" id="larger-storage" value="largerStorage" data-price="2">
+            </label>
+            <span id="larger-storage-price">+2$/mo</span>
+          </div>
+
+          <div class="addons-option">
+            <label for="customizable-profile">
+              <input type="checkbox" class="addons-btn" id="customizable-profile" value="customizableProfile" data-price="2">
+            </label>
+            <span id="customizable-profile-price">+2$/mo</span>
+          </div>
+
+        </div>
+
+        <div class="finishing-up hidden" id="step-4">
+          <div class="selection-summary">
+            <div class="plan-sum">
+              <div>
+                <h5 id="plan-select-sum">Arcade (Monthly)</h5>
+                <button class="plan-change-btn">Change</button>
+              </div>
+              <p id="plan-price-sum">$9/mo</p>
+            </div>
+
+            <div class="addons-sum">
+              <div class="sum-addons-option" data-addon="onlineService">
+                <span>Online service</span>
+                <span id="sum-online-service">+1$/mo</span>
+              </div>
+              <div class="sum-addons-option" data-addon="largerStorage">
+                <span>Larger storage</span>
+                <span id="sum-larger-storage">+2$/mo</span>
+              </div>
+              <div class="sum-addons-option" data-addon="customizableProfile">
+                <span>Cusomizable Profile</span>
+                <span id="sum-customizable-profile">+2$/mo</span>
+              </div>
+            </div>
+
+          </div>
+          <div class="total-price">
+            <p id="subscription-type-sum">Total price (per month)</p>
+            <p id="final-price-display">$9/mo</p>
+          </div>
+        </div>
+
+          <button type="button" class="return-btn">Go back</button>
+          <button type="submit" class="continue-btn">Next step</button>
+      </div>
+
+    </div>
+  </main>
+
+
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/raccoonwannafly">raccoonwannafly</a>.
+    </div>
+  </footer>
+</body>
+</html>
