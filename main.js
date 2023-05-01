@@ -1,21 +1,24 @@
 "use strict";
 
+const regexInput = {
+    name: /^[a-zA-Z]+ [a-zA-Z]+$/,
+    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+    phone: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/
+}
+
 const userInput = {
     name: {
         alerted: false,
-        regex: /^[a-zA-Z]+ [a-zA-Z]+$/,
         valid: false,
         description: ""
     },
     email: {
         alerted: false,
-        regex: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
         valid: false,
         description: ""
     },
     phone: {
         alerted: false,
-        regex: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/,
         valid: false,
         description: ""
     },    
@@ -56,14 +59,13 @@ const userInput = {
             "Yearly" : "$20"
         }
     }
-}
-
+};
 
 // step 1 function:
 function checkPersonalInput () {
     userInput[this.name].description = this.value;
     console.log(userInput[this.name].description);
-    if((!userInput[this.name].regex.test(this.value)) && !userInput[this.name].alerted) {
+    if((!regexInput[this.name].test(this.value)) && !userInput[this.name].alerted) {
         const label = document.querySelector(`label[for="${this.name}"]`);
         let p = document.createElement('p');
         p.className = `alert ${this.name}`;
@@ -71,7 +73,7 @@ function checkPersonalInput () {
         label.append(p);
         userInput[this.name].alerted = true;
         userInput[this.name].valid = false;
-    } else if ((userInput[this.name].regex.test(this.value))){
+    } else if ((regexInput[this.name].test(this.value))){
         if (userInput[this.name].alerted) {
             const alert = document.querySelector(`p.alert.${this.name}`);
             alert.remove();
@@ -79,6 +81,7 @@ function checkPersonalInput () {
         userInput[this.name].alerted = false;
         userInput[this.name].valid = true;
     }
+
 }
 
 // step 2 functions:
@@ -235,7 +238,6 @@ function stepHandler () {
         nextStep.classList.remove("hidden");
     }
 
-
     if(this.classList.contains("continue-btn")) {
         if(step==1) {
             let personalInputValid = 0;
@@ -246,6 +248,7 @@ function stepHandler () {
                 }
             }
             if(personalInputValid===3) {
+                returnBtn.classList.remove("hidden");
                 stepTransition();
             }
             return;
@@ -257,7 +260,17 @@ function stepHandler () {
             console.log("3")
             stepTransition();
             summaryUpdater();
+            continueBtn.classList.add("final-step-btn");
+            continueBtn.innerText = "Continue";
             return;
+        } else if(step==4) {
+            continueBtn.classList.add("hidden-display");
+            returnBtn.classList.add("hidden-display");
+            const title = document.querySelector(".title-display");
+            const finalMessage = document.querySelector(".final-message");
+            title.classList.add("hidden-display");
+            currentStep.classList.add("hidden");
+            finalMessage.classList.remove("hidden");
         }
     } else if (this.classList.contains("plan-change-btn")){
         console.log("ok");
@@ -266,17 +279,21 @@ function stepHandler () {
         stepTitleHandler(stepSecondDisplay);
         currentStep.classList.add("hidden");
         stepSecond.classList.remove("hidden");
+        continueBtn.classList.remove("final-step-btn");
+        continueBtn.innerText = "Next step";
     } else if(step !== 1){
+        console.log(step);
+        if(step==2){
+            returnBtn.classList.add("hidden");
+        }
         changeActive(currentActiveDisplay, previousStepDisplay);
         stepTitleHandler(previousStep);
         currentStep.classList.add("hidden");
         previousStep.classList.remove("hidden");
+        continueBtn.classList.remove("final-step-btn");
+        continueBtn.innerText = "Next Step";
         }
 }
-
-// return button function
-
-
 
 // const wrapper = document.querySelector(".wrapper");
 const inputForm = document.querySelector(".input-form")
@@ -302,8 +319,6 @@ const addonsOptions = document.querySelectorAll(".addons-option input[type='chec
 // step 4:
 const stepFourth = inputForm.querySelector(".finishing-up");
 
-
-const trueArg = true;
 // Event listeners:
 // navigation
 continueBtn.addEventListener("click", stepHandler);
