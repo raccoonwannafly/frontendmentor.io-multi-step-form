@@ -27,7 +27,7 @@ Users should be able to:
 - Live Site URL: https://multistepform-raccoonwannafly.netlify.app/
 
 ## My process
-Took my a long time as I learn how to manipulate DOM at the same time as learning some new CSS properties
+Took me a long time as I learn how to manipulate DOM at the same time as learning some new CSS properties
 Using flexbox and grid I was able to determine UI layout pretty easily, the rest were just minor details adjusting here and there
 Also regex from google helped alot..
 
