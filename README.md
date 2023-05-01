@@ -36,7 +36,7 @@ Also regex from google helped alot..
 Pure HTML, CSS and JavaScript
 
 ### Continued development
-Struggling with responsive design, as initially I didn't take mobile design seriously enough.
+Struggling with responsive design, as initially I didn't take mobile design seriously enough. Plus google mobile view is kinda junky. 
 It really boils down to relative units and correct positioning so that the web layout can fit perfectly for other devices.
 Will update responsive design in the future..
 
