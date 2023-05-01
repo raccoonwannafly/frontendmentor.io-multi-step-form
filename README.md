@@ -1,22 +1,11 @@
-# Frontend Mentor - Multi-step form
+# Frontend Mentor - Multi-step form solution
 
-![Design preview for the Multi-step form coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Overview
 
-Thanks for checking out this front-end coding challenge.
-
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-
-**To do this challenge, you need a good understanding of HTML, CSS and JavaScript.**
-
-## The challenge
-
-Your challenge is to build out this multi-step form and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+### The challenge
+Users should be able to:
 
 - Complete each step of the sequence
 - Go back to a previous step to update their selections
@@ -28,130 +17,32 @@ Your users should be able to:
   - The email address is not formatted correctly
   - A step is submitted, but no selection has been made
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
+
+![image](https://user-images.githubusercontent.com/130273473/235433896-79616e76-0961-4423-b52c-5eca69720a1a.png)
+
+### Links
+
+- Solution URL: https://github.com/raccoonwannafly/frontendmentor.io-multi-step-form
+- Live Site URL: https://multistepform-raccoonwannafly.netlify.app/
+
+## My process
+Took my a long time as I learn how to manipulate DOM at the same time as learning some new CSS properties
+Using flexbox and grid I was able to determine UI layout pretty easily, the rest were just minor details adjusting here and there
+Also regex from google helped alot..
+
+### Built with
+
+Pure HTML, CSS and JavaScript
+
+### Continued development
+Struggling with responsive design, as initially I didn't take mobile design seriously enough.
+It really boils down to relative units and correct positioning so that the web layout can fit perfectly for other devices.
+Will update responsive design in the future..
 
 
-## Building your project
+### Useful resources
+-- F8 Official: https://www.youtube.com/@F8VNOfficial
+-- WebDevSimplified: https://www.youtube.com/@WebDevSimplified
+-- FireShip: https://www.youtube.com/@Fireship
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
-
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
-
-## Deploying your project
-
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
-
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
-
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
-
-## Create a custom `README.md`
-
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
-
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
-
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
-
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
-
-
-/*
-
-<!-- Select your plan
-You have the option of monthly or yearly billing.
-
-Arcade
-$9/mo
-
-Advanced
-$12/mo
-
-Pro
-$15/mo
-
-Monthly
-Yearly
-
-Go Back
-Next Step -->
-
-<!-- Step 2 end -->
-
-<!-- Step 3 start -->
-
-<!-- Pick add-ons
-Add-ons help enhance your gaming experience.
-
-Online service
-Access to multiplayer games
-+$1/mo
-
-Larger storage
-Extra 1TB of cloud save
-+$2/mo
-
-Customizable Profile
-Custom theme on your profile
-+$2/mo
-
-Go Back
-Next Step -->
-
-<!-- Step 3 end -->
-
-<!-- Step 4 start -->
-
-<!-- Finishing up
-Double-check everything looks OK before confirming. -->
-
-<!-- Dynamically add subscription and add-on selections here -->
-
-<!-- Total (per month/year)
-
-Go Back
-Confirm -->
-
-<!-- Step 4 end -->
-
-<!-- Step 5 start
-
-Thank you!
-
-Thanks for confirming your subscription! We hope you have fun 
-using our platform. If you ever need support, please feel free 
-to email us at support@loremgaming.com.
-
-Step 5 end */
