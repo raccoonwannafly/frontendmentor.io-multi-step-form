@@ -27,7 +27,7 @@ Users should be able to:
 - Live Site URL: https://multistepform-raccoonwannafly.netlify.app/
 
 ## My process
-Took me a while as I learn how to manipulate DOM at the same time as learning some new CSS properties
+Took me a while as I learn how to manipulate DOM at the same time as learning some new CSS properties.
 Using flexbox and grid I was able to determine UI layout pretty easily, the rest were just minor details adjusting here and there
 Also regex from google helped alot..
 
@@ -36,6 +36,7 @@ Also regex from google helped alot..
 Pure HTML, CSS and JavaScript
 
 ### Continued development
+My second time building a form. Learned alot, however since its only my second time the code is really clunky and not future proof. In the future I will try to draft layout as well as using more pseudo code beforehand.
 Struggling with responsive design, as initially I didn't take mobile design seriously enough. Plus google mobile view is kinda junky. 
 It really boils down to relative units and correct positioning so that the web layout can fit perfectly for other devices.
 Will update responsive design in the future..
