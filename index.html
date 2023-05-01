@@ -58,17 +58,17 @@
         <form action="" class="" id="step-1">
           <label for="name">
             Name
-          </label> <input class="personal-input" id="name" type="text" name="name" required placeholder="e.g. Stephen King">
+          </label> <input class="personal-input" id="name" type="text" name="name" data-regex="regexName" required placeholder="e.g. Stephen King">
 
           <label for="email">
             Email Address
           </label>
-          <input class="personal-input" id="email" type="text" name="email" required placeholder="e.g. stephenking@lorem.com">
+          <input class="personal-input" id="email" type="text" name="email" required data-regex="regexEmail" placeholder="e.g. stephenking@lorem.com">
 
           <label for="phone">
             Phone Number
           </label>
-          <input class="personal-input" id="phone" type="text" name="phone" required placeholder="e.g. +1 234 567 890">
+          <input class="personal-input" id="phone" type="text" name="phone" required data-regex="regexPhone" placeholder="e.g. +1 234 567 890">
         </form>
 
         <div class="plan-select hidden" id="step-2">
@@ -160,10 +160,17 @@
           </div>
         </div>
 
-          <button type="button" class="return-btn">Go back</button>
-          <button type="submit" class="continue-btn">Next step</button>
-      </div>
+        <div class="final-message hidden">
+          <img src=".\assets\images\icon-thank-you.svg" alt="Thank you!">
+          <h3>Thank you!</h3>
+          <span>Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com</span>
+        </div>
 
+        <div class="navigation-btns">
+          <button type="button" class="return-btn hidden">Go back</button>
+          <button type="submit" class="continue-btn">Next step</button>
+        </div>
+      </div>
     </div>
   </main>
 
