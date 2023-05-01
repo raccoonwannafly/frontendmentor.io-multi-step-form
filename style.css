@@ -37,6 +37,7 @@ html {
     box-sizing: inherit;
 }
 
+
 body {
     margin: 0;
     font-family: "Ubuntu-Regular", sans-serif;
@@ -551,6 +552,26 @@ div.finishing-up {
     background-color: var(--Purplish-blue-light);
 }
 
+.final-step-btn {
+    background: rgb(100, 23, 215);
+}
+
+.final-step-btn:hover {
+    background: rgb(152, 120, 225);
+}
+
+.final-message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.final-message span {
+    color: var(--Cool-gray);
+    font-size: .8rem;
+}
 
 footer {
     position: absolute;
@@ -559,3 +580,4 @@ footer {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
