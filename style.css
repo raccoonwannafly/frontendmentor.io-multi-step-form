@@ -282,7 +282,7 @@ div.plan-type {
 }
 
 .addons-option {
-    background: var(--Magnolia);
+    background: var(--White);
     border: 1.3px solid var(--Purplish-blue);
     border-radius: 10px;
     transition: all 0.1s ease-in-out;
@@ -290,7 +290,7 @@ div.plan-type {
 }
 
 .addons-option:hover {
-    background: var(--White);
+    background: var(--Magnolia);
     border: 1.5px solid var(--Purplish-blue);
 }
 
@@ -315,6 +315,7 @@ div.plan-type {
 }
 
 .addons-option input:checked{
+    background: var(--Magnolia);
     filter: saturate(1) hue-rotate(25deg) brightness(1);
 }
 
